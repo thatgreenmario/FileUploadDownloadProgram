@@ -18,16 +18,16 @@ public class uploadController {
     private StorageService storageService;
 
     @RequestMapping(value = "/doUpload", method = RequestMethod.POST,consumes = {"multipart/form-data"})
-    public String upload(@RequestParam MultipartFile file) {
+    public boolean upload(@RequestParam MultipartFile file) {
 
         storageService.uploadFile(file);
 
-        return "redirect:/success.html";
+        return true;
     }
 
     @ExceptionHandler(StorageException.class)
-    public String handleStorageFileNotFound(StorageException e) {
+    public boolean handleStorageFileNotFound(StorageException e) {
 
-        return "redirect:/failure.html";
+        return false;
     }
 }

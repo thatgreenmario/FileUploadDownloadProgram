@@ -17,7 +17,7 @@ import java.nio.file.Files;
 	@Service
 	public class StorageService {
 
-	    private String path;
+	    private String path="/home/";
 
 	    public void uploadFile(MultipartFile file) {
 
@@ -29,7 +29,7 @@ import java.nio.file.Files;
 	            String fileName = file.getOriginalFilename();
 	            InputStream is = file.getInputStream();
 
-	            Files.copy(is, Paths.get("F:\\" + fileName),
+	            Files.copy(is, Paths.get(path + fileName),
 	                    StandardCopyOption.REPLACE_EXISTING);
 	        } catch (IOException e) {
 

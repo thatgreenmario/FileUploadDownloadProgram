@@ -16,7 +16,7 @@ import org.springframework.web.bind.annotation.PathVariable;
 @Controller
 public class DownloadController {
 	
-	String fileBasePath="F:\\";
+	String fileBasePath="/home/";
 	
 	@GetMapping("/download/{fileName:.+}")
 	public ResponseEntity downloadFileFromLocal(@PathVariable String fileName) {

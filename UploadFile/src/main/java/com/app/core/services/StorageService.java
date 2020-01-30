@@ -17,7 +17,7 @@ import java.nio.file.Files;
 	@Service
 	public class StorageService {
 
-	    private String path="/home/";
+	    private String path="F:\\";
 
 	    public void uploadFile(MultipartFile file) {
 
